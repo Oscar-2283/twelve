@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Noto+Sans+TC&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -215,6 +219,7 @@ header.sticky nav ul {
 header.sticky nav ul li a {
   font-family: 'calligraphy' ,sans-serif;
   font-size: 27px;
+  width: 100%;
 }
 
 header .banner {
@@ -1287,5 +1292,11 @@ footer .footer .wave#wave4 {
 
 .glightbox-clean .gnext, .glightbox-clean .gprev {
   display: none;
+}
+
+.fp-responsive .fp-responsive-auto-height.fp-section,
+.fp-responsive .fp-responsive-auto-height .fp-slide,
+.fp-responsive .fp-responsive-auto-height .fp-tableCell {
+  height: auto !important;
 }
 /*# sourceMappingURL=index.css.map */

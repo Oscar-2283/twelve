@@ -1,3 +1,6 @@
+html {
+	scroll-behavior: smooth;
+}
 *{
     box-sizing: border-box;
     padding: 0;
@@ -164,6 +167,7 @@ header{
             li a{
                 font-family: 'calligraphy' ,sans-serif;
                 font-size: 27px;
+                width: 100%;
             }
         }
 
@@ -975,4 +979,11 @@ footer{
 
 .glightbox-clean .gnext,.glightbox-clean .gprev{
     display: none;
+}
+
+
+.fp-responsive .fp-responsive-auto-height.fp-section,
+.fp-responsive .fp-responsive-auto-height .fp-slide,
+.fp-responsive .fp-responsive-auto-height .fp-tableCell{
+    height: auto !important;
 }

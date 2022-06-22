@@ -2,6 +2,7 @@
 
     new fullpage('#fullpage', {
         navigation: true,
+        menu:'#menu',
         anchors: ['home', 'news', 'about','menu','store'],
         parallax: true,
         responsiveWidth: 700,
@@ -44,31 +45,33 @@
 
 // <!-- header -->
 
-        const header = document.querySelector('header')
+const header = document.querySelector('header')
+const nav = document.querySelector('nav')
 
-        const nav = document.querySelector('nav')
-        document.querySelector('.toggle').onclick = function(){
-            console.log(this)
-            this.classList.toggle('active')
-            nav.classList.toggle('active')
-        }
 
-        addEventListener('resize', e=>{
-            let currentWidth =  document.body.clientWidth;
-            if(currentWidth >991){
-                nav.classList.remove('active')
-                document.querySelector('.toggle').classList.remove('active')
-            }
-            if(currentWidth <= 991){
-                let navLink = document.querySelectorAll('nav ul li a');
-                navLink.forEach(e =>{
-                    e.addEventListener('click', ()=>{
-                        document.querySelector('.toggle').classList.toggle('active')
-                        nav.classList.toggle('active')
-                    })
-                })
-            }
+
+document.querySelector('.toggle').onclick = function(){
+    this.classList.toggle('active')
+    nav.classList.toggle('active')
+}
+
+addEventListener('resize', e=>{
+    let currentWidth =  document.body.clientWidth;
+    let navLink = document.querySelectorAll('nav ul li a');
+    if(currentWidth >991){
+        nav.classList.remove('active')
+        document.querySelector('.toggle').classList.remove('active')
+    }
+    if(currentWidth <= 991){
+        navLink.forEach(e =>{
+            e.addEventListener('click', ()=>{
+                document.querySelector('.toggle').classList.toggle('active')
+                nav.classList.toggle('active')
+            })
         })
+    }
+
+})
 
 
 
@@ -97,11 +100,6 @@ navList.forEach(e=>{
         cursorImg.style.transition = '0.3s';
     })
 })
-// console.log(navListAll)
-// navListAll.addEventListener('mouseleave', ()=>{
-//     cursorImg.style.opacity = '0';
-// })
-
 
 //lightbox
 const lightbox = GLightbox({
