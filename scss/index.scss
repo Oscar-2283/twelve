@@ -57,7 +57,10 @@ h1,h2,h3,h4,h5,h6{
     justify-content: unset;
 }
 
-
+.navImgBody{
+    overflow-x: hidden;
+    width: calc(100vw - 17px);
+}
 .cursor-navImg{
     position: absolute;
     top: 0;
@@ -106,6 +109,7 @@ header{
             }
         }
         .banner{
+            object-fit: cover;
             @media(max-width:991px){
                 opacity: 0;
             }
@@ -178,7 +182,6 @@ header{
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        font-size: 15vw;
         color: #fff;
         font-weight: 700;
         transition: 1s;
@@ -220,6 +223,7 @@ header{
                     display: inline-block;
                     padding: 10px 15px;
                     font-size: 1.2rem;
+                    font-family: 'calligraphy' ,sans-serif;
                     text-decoration: none;
                     &:hover{
                         color: #ff275f;
@@ -432,42 +436,50 @@ header{
 
 .aboutus-main{
     position: relative;
+    flex-wrap: wrap;
+    
 
     img{
         width: 40%;
         height: auto;
         @media(max-width: 768px){
-            width: 60%;
-        }
-        @media(max-width: 576px){
-            width: 50%;
+            width: 100%;
         }
     }
     p{
-        font-family: 'HanyiSentyFoundation' ,sans-serif;
         writing-mode: vertical-rl;
         font-size: 28px;
         height: 400px;
         line-height: 4rem;
         @media (max-width:768px){
+            margin-top: 40px;
+            line-height: 5rem;
+        }
+        @media (max-width:576px){
+            display: none;
+            margin-top: 40px;
             height: 350px;
             font-size: 24px;
             line-height: 3rem;
-        }
-        @media (max-width:650px){
-            height: 260px;
-            font-size: 18px;
-            line-height: 2.5rem;
-        }
-        @media (max-width:576px){
-            height: 225px;
-            font-size: 16px;
-            line-height: 2rem;
         }
         
         span {
             animation: append-in 0.8s both;
             font-family: 'HanyiSentyFoundation' ,sans-serif;
+        }
+    }
+
+}
+.about-text{
+    p{  
+        letter-spacing: .25em;
+        font-size: 30px;
+        @media(max-width:768px){
+            font-size: 24px;
+        }
+        @media(max-width:768px){
+            letter-spacing: .12em;
+            font-size: 20px;
         }
     }
 }
@@ -568,7 +580,7 @@ header{
         display: flex;
         height: 3px;
         flex-direction: column;
-        height: 50%;
+        height: 20%;
         width: 60px;
         right: calc(20% - 60px);
         top: 8%;
@@ -754,67 +766,71 @@ header{
             margin-top: 10px ;
             font-size: 1rem;
             font-weight: 200;
+            margin-bottom: 15px
+            ;
         }
-        .btn{
-            background-color: transparent;
-            font-size: 14px;
-            letter-spacing: 2px;
-            color: #fff;
-            position: relative;
-            transition:all .3s ease-in-out;
-            cursor: pointer;
+        a{
             margin-top: 20px;
-            border: 0;
-            padding: 0 15px;
-            left: 0;
-            &:hover{
-                padding-left: 35px;
-            }
-            &:hover::before{
-                left: 11px;
-                transform: rotate(90deg);
-            }
-            &:hover::after{
-                border: solid 2px #fff;
-                border-left: 0;
-                border-bottom:0;
-                top: 5.7px;
-                left: 11px;
-                width: 10px;
-                height: 10px;
-                opacity: 1;
-
-            }
-            &::before{
-                content: '';
-                background-color: #fff;
-                width: 2px;
-                height: 20px;
-                position: absolute;
-                z-index: 2;
-                left: -1px;
-                top: 1px;
-                border-radius: inherit;
-                transition: all .3s ease-in-out;
-            }
-            &::after{
-                content: '';
-                width: 0px;
-                height: 0px;
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border:  solid 2px transparent;
-                top: 3px;
-                border-left: 0;
-                border-bottom: 0;
-                transform:rotate(45deg) ;
-                left: -10px;
-                transition: all .3s ease-in-out;
+            .btn{
+                background-color: transparent;
+                font-size: 14px;
+                letter-spacing: 2px;
+                color: #fff;
+                position: relative;
+                transition:all .3s ease-in-out;
+                cursor: pointer;
+                border: 0;
+                padding: 0 15px;
+                left: 0;
+                &:hover{
+                    padding-left: 35px;
+                }
+                &:hover::before{
+                    left: 11px;
+                    transform: rotate(90deg);
+                }
+                &:hover::after{
+                    border: solid 2px #fff;
+                    border-left: 0;
+                    border-bottom:0;
+                    top: 5.7px;
+                    left: 11px;
+                    width: 10px;
+                    height: 10px;
+                    opacity: 1;
+    
+                }
+                &::before{
+                    content: '';
+                    background-color: #fff;
+                    width: 2px;
+                    height: 20px;
+                    position: absolute;
+                    z-index: 2;
+                    left: -1px;
+                    top: 1px;
+                    border-radius: inherit;
+                    transition: all .3s ease-in-out;
+                }
+                &::after{
+                    content: '';
+                    width: 0px;
+                    height: 0px;
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border:  solid 2px transparent;
+                    top: 3px;
+                    border-left: 0;
+                    border-bottom: 0;
+                    transform:rotate(45deg) ;
+                    left: -10px;
+                    transition: all .3s ease-in-out;
+                }
             }
         }
-   
+
         &.playText{
             animation: Textanimation 1.5s ease-in-out;
         }
@@ -832,6 +848,55 @@ header{
 }
 
 
+
+
+//store
+.margin-bottom150{
+    @media(max-width:768px){
+        margin-bottom: 150px!important;
+    }
+}
+.p-4rem{
+    padding: 4rem ;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.gap-10{
+    gap: 30px;
+}
+.border-3{
+    border-width: 3px !important;
+}
+.font-15rem{
+    font-size: 1.5rem;
+}
+.storeImg{
+    background-color: rgba(0,0,0,0.5);
+    background-image: url('../img/storeimg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.store-inner{
+    flex: 0 0 25%;
+    min-width: 25%;
+    @media(max-width:1580px){
+        flex: 0 0 35%;
+        min-width: 35%;
+    }
+    @media(max-width:700px){
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+}
+.storeProfile{
+    .storeText{
+        flex: 1;
+    }
+}
+
 //footer
 footer{
     display: flex;
@@ -840,14 +905,15 @@ footer{
     .footer{
         position: relative;
         width: 100%;
-        background: #3586ff;
+        background: #cae6fdd9
+        ;
         min-height: 100px;
         p{
-            color: white;
+            color: rgb(0, 0, 0);
             text-align: center;
             margin-top: 15px;
             margin-bottom: 10px;
-            font-size: 1.1rem;
+            font-size: .85rem;
         }
         .wave{
             position: absolute;
@@ -857,6 +923,7 @@ footer{
             height: 100px;
             background: url("../img/wave.png");
             background-size: 1000px 100px;
+            opacity: .8;
             &#wave1{
                 z-index: 1000;
                 opacity: 1;
@@ -900,4 +967,12 @@ footer{
     100%{
         background-position-x:  1000px; 
     }
+}
+
+.glightbox-container .gslide{
+    width: 90%;
+}
+
+.glightbox-clean .gnext,.glightbox-clean .gprev{
+    display: none;
 }
